@@ -40,7 +40,7 @@ public class Controller15 {
 	public String method5() {
 		System.out.println("method 5 !!!");
 		
-		return null;
+		return null; 
 	}
 	
 	// sub05 요청
@@ -48,7 +48,7 @@ public class Controller15 {
 	// /WEB-INF/views/ex15/sub051.jsp로 forward
 	// 없으면
 	// /WEB-INF/views/ex15/sub05.jsp로 forward
-	@RequestMapping("sub05")
+//	@RequestMapping("sub05")
 	public String method5(String name) {
 		if (name == null) {
 			return null;

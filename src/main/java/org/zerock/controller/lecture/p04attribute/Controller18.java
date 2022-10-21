@@ -25,7 +25,7 @@ public class Controller18 {
 		b.setAge(30);
 		b.setEmail("ab@daum.net");
 		b.setName("park");
-		b.setPassword("aaa");
+		b.setPassword(123);
 	}
 	
 	@RequestMapping("sub03")

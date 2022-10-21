@@ -28,7 +28,7 @@ public class Controller10 {
 	}
 	
 	// ex10/sub03?address=korea
-	@GetMapping("sub03")
+//	@GetMapping("sub03")
 	public void method4(@RequestParam(name = "address", required = false) String d) {
 		System.out.println(d);
 	}
