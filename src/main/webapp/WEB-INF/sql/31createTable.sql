@@ -1,4 +1,4 @@
-USE mydb1; 
+USE mydb1;
 
 -- 테이블 만들기
 CREATE TABLE myTable01 (
@@ -59,3 +59,13 @@ FROM w3schools.Products;
 DESC myProducts;
 
 SELECT * FROM myProducts;
+
+
+
+
+
+
+
+
+
+

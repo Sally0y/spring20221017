@@ -19,3 +19,9 @@ INSERT INTO MyTable11 (col1, col2) VALUES (3, 4);
 INSERT INTO MyTable11 (col2) VALUES (4);
 INSERT INTO MyTable11 (col1) VALUES (3);
 SELECT * FROM MyTable11;
+
+
+
+
+
+

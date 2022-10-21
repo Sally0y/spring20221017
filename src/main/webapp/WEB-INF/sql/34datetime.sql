@@ -3,19 +3,19 @@
 -- DATE : 날짜
 -- DATETIME : 날짜 시간
 
-CREATE TABLE MyTable06 (
+CREATE TABLE myTable06 (
 	col1 DATE, 
     col2 DATETIME
 );
-INSERT INTO MyTable06 (col1, col2) 
+INSERT INTO myTable06 (col1, col2) 
 VALUES ('2022-10-21', '2022-10-21 11:02:00');
-SELECT * FROM MyTable06;
+SELECT * FROM myTable06;
 
 -- DATE : java.sql.Date
 -- DATETIME : java.sql.Timestamp 
 
 
-CREATE TABLE MyTable07 (
+CREATE TABLE myTable07 (
 	col1 INT,
     col2 DEC(10, 3),
     col3 VARCHAR(255),
@@ -23,10 +23,10 @@ CREATE TABLE MyTable07 (
     col5 DATE,
     col6 DATETIME
 );
-SELECT * FROM MyTable07;
+SELECT * FROM myTable07;
 
 
-CREATE TABLE MyTable08 (
+CREATE TABLE myTable08 (
 	name VARCHAR(255),
     age INT,
     score DEC(10, 2),
@@ -34,6 +34,12 @@ CREATE TABLE MyTable08 (
     birthDate DATE,
     inserted DATETIME
 );
-SELECT * FROM MyTable08;
+SELECT * FROM myTable08;
+
+
+
+
+
+
 
 

@@ -42,3 +42,25 @@ VALUES
 ('Kim', 'kildong2', ' ');
 
 -- NULL은 값이 없음
+
+-- Customers 테이블에 레코드 추가
+SELECT * FROM Customers ORDER BY 1 DESC;
+
+INSERT INTO Customers
+(CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES
+(100, 'Steve', 'Captain', 'brooklyn', 'NewYork', '33333', 'USA');
+
+INSERT INTO Customers
+(CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES
+('Stephen', 'Strange', 'brooklyn', 'NewYork', '33333', 'USA');
+
+-- DESCRIBE : 테이블 구조 조회, 제약사항(Constraints) 조회
+DESC Customers; 
+
+
+
+
+
+

@@ -9,30 +9,19 @@ WHERE Country = 'Mexico'
 SELECT * FROM Customers WHERE Country IN ('Germany', 'Mexico');
 SELECT * FROM Customers WHERE Country IN ('Germany', 'Mexico', 'UK');
 
-SELECT *
-FROM Customers
-WHERE Country
-	IN ('Germany', 'Mexico');
-
 -- 'Madrid', 'München', 'London'에 사는 고객들 조회
 SELECT *
 FROM Customers
-WHERE Country
-	IN ('London', 'Madrid', 'München');
-
+WHERE City IN ('Madrid', 'München', 'London');
 -- uk, usa, japan 에 있는 공급자들
 SELECT *
 FROM Suppliers
-WHERE Country
-	IN ('USA', 'UK', 'Japan');
+WHERE Country IN ('uk', 'usa', 'japan');
 -- 카테고리번호 1,2,3 인 상품들
-SELECT *
+SELECT * 
 FROM Products
-WHERE CategoryID
-	IN (1, 2, 3);
-
+WHERE CategoryID IN (1, 2, 3);
 -- 1996년 7월 8일, 1996년 7월 19일 에 주문한 주문번호들
 SELECT *
-FROM Oders
-WHERE OrderDate
-	IN ('1996-07-08', '1996-07-19');    
+FROM Orders
+WHERE OrderDate IN ('1996-07-08', '1996-07-19');

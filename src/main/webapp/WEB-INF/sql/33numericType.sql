@@ -17,6 +17,7 @@ INSERT INTO myTable03 (col1, col2, col3)
 VALUES (999, 9999, 4200000000); -- not ok
 SELECT * FROM myTable03;
 
+
 CREATE TABLE myTable04 (
 	col1 INT(3) ZEROFILL,
     col2 INT(4) ZEROFILL,
@@ -42,4 +43,9 @@ SELECT * FROM myTable05;
 
 -- INT -> java int, long
 -- DEC -> java double, BigDecimal
+
+
+
+
+
 

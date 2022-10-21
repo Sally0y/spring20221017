@@ -1,4 +1,4 @@
--- CHECK: 조건에 맞는 데이터만 입력 가능
+-- CHECK : 조건에 맞는 데이터만 입력 가능
 CREATE TABLE MyTable14 (
 	col1 INT,
     col2 INT,
@@ -12,3 +12,9 @@ INSERT INTO MyTable14 (col1, col2)
 VALUES (-333, -33333);
 
 SELECT * FROM MyTable14;
+
+
+
+
+
+
