@@ -3,10 +3,11 @@ package org.zerock.controller.lecture.p06jdbc;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.sql.DataSource;
 
-import org.mariadb.jdbc.Statement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,7 +64,7 @@ public class Controller25 {
 	}
 
 	@RequestMapping("sub03")
-	public void method03() {
+	public void method03() throws Exception {
 		String sql = "SELECT col1, col2, col3, col4, col5, col6 FROM myTable07";
 		
 		try (Connection con = dataSource.getConnection();
@@ -93,7 +94,7 @@ public class Controller25 {
 	// myTable08 조회 코드 작성
 
 	@RequestMapping("sub04")
-	public void method04() {
+	public void method04() throws Exception {
 		String sql = "SELECT name, age, score, address, birthDate, inserted FROM myTable08";
 		
 		try (Connection con = dataSource.getConnection();

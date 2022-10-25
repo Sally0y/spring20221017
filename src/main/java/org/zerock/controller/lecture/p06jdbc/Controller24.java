@@ -22,9 +22,12 @@ import org.zerock.domain.lecture.Customer;
 @RequestMapping("ex24")
 public class Controller24 {
 
+	@Autowired
+	private DataSource dataSource;
+
 	@GetMapping("sub01")
 	public void listAllCustomers( 
-			@ModelAttribute("customerList") ArrayList<Customer> list) throw Exception {
+			@ModelAttribute("customerList") ArrayList<Customer> list) throws Exception {
 		String sql = "SELECT "
 				+ "CustomerID id, "
 				+ "CustomerName name, "
