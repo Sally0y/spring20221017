@@ -28,5 +28,8 @@ SELECT*FROM TableA A LEFT OUTER JOIN TableB B ON A.col1 = B.c1;
 -- OUTER 생략가능
 SELECT*FROM TableA A LEFT JOIN TableB B ON A.col1 = B.c1;
 
--- LEFT OUTER JOIN: INNER JOIN 결과 + 왼쪽 테이블의 레코드들
-SELECT * FROM Tacle
+-- RIGHT OUTER JOIN: 결과 +  오른쪽 테이블의 레코드들
+SELECT*FROM TableA A RIGHT OUTER JOIN TableB B ON A.col1 = B.c1;
+-- OUTER 생략가능
+SELECT*FROM TableA A RIGHT JOIN TableB B ON A.col1 = B.c1;
+
