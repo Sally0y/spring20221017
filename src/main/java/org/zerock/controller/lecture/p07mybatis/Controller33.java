@@ -32,7 +32,13 @@ public class Controller33 {
 	FROM Products p JOIN Suppliers s ON p.SupplierID = s.SupplierID
 	WHERE s.SupplierID = 1
 		 */
-
+	@RequestMapping("sub02")
+	public void method2() {
+		JavaBean12 supplier = mapper.getSupplier();
+		System.out.println(supplier.getId());
+		System.out.println(supplier.getName());
+		supplier.getProductName().forEach(System.out::println);
+	}
 }
 
 
