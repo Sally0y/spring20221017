@@ -29,7 +29,7 @@
 	<insert id="addCustomer">
 	INSERT INTO Customers
 	(CustomerName, ContactName, Address, City, PostalCode, Country)
-	VALUE
+	VALUES
 	('SR', 'SH', "UK", 'app', '11111', '11111')
 	
 	</insert>
@@ -37,7 +37,7 @@
 	<insert id="addSupplier">
 	INSERT INTO Customers
 	(SupplierName, ContactName, Address, City, PostalCode, Country, Phone)
-	VALUE
+	VALUES
 	('ESR', 'ESH', 'USA', 'app', '11111', '11111', 'ASGDE', '010-1234-5678')
 	
 	</insert>
@@ -45,7 +45,7 @@
 	<insert id="insertCustomer">
 	INSERT INTO Customers
 	(CustomerName, ContactName, Address, City, PostalCode, Country)
-	VALUE
+	VALUES
 	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country})
 	</insert>
 	
@@ -55,4 +55,19 @@
 	VALUE
 	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country}, #{phone})
 	</insert>
+	
+	<insert id="insertCustomerAndGetKey"  useGeneratedKeys="true" keyProperty="id">
+	INSERT INTO Customers
+	(CustomerName, ContactName, Address, City, PostalCode, Country)
+	VALUES
+	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country})
+	</insert>
+	
+	<insert id="insertSupplierAndGetKey"  useGeneratedKeys="true" keyProperty="id">
+	INSERT INTO Suppliers
+	(SupplierName, ContactName, Address, City, PostalCode, Country, Phone)
+	VALUE
+	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country}, #{phone})
+	</insert>
+	
 </mapper>
