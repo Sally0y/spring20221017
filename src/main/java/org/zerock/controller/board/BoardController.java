@@ -45,11 +45,11 @@ public class BoardController {
 	}
 	
 	@GetMapping("list")
-	public void list(Model model) {
+	public void list(@RequestParam(name = "page", defaultValue = "1") int page, Model model) {
 		// request param 수집/가공
 		
 		// business logic
-		List<BoardDto> list = service.listBoard();
+		List<BoardDto> list = service.listBoard(page);
 		
 		
 		// add attr
@@ -67,7 +67,6 @@ public class BoardController {
 		// req param
 		// business logic (게시물 DB에서 가져오기)
 		BoardDto board = service.get(id);
-		System.out.println(board);
 		// add attribute
 		model.addAttribute("board", board);
 		// forward
@@ -80,8 +79,16 @@ public class BoardController {
 	}
 	
 	@PostMapping("modify")
-	public String modify(BoardDto board) {
-		service.update(board);
+	public String modify(BoardDto board, RedirectAttributes rttr) {
+		int cnt = service.update(board);
+		
+		if (cnt == 1) {
+			rttr.addFlashAttribute("message", board.getId() + "번 게시물이 수정되었습니다.");
+		} else {
+			rttr.addFlashAttribute("message", board.getId() + "번 게시물이 수정되지 않았습니다.");
+		}
+		
+		
 		
 		return "redirect:/board/list";
 	}
