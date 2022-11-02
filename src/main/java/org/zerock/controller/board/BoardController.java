@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.board.BoardDto;
+import org.zerock.domain.board.PageInfo;
 import org.zerock.service.board.BoardService;
 
 @Controller
@@ -24,7 +25,7 @@ public class BoardController {
 	public void register() {
 		//게시물 작성 view로 forward
 		// /WEB-INF/views/board/register.jsp
-	}
+	} 
 	
 	@PostMapping("register")
 	public String register(BoardDto board, RedirectAttributes rttr) {
@@ -45,11 +46,16 @@ public class BoardController {
 	}
 	
 	@GetMapping("list")
-	public void list(@RequestParam(name = "page", defaultValue = "1") int page, Model model) {
+	public void list(
+			@RequestParam(name = "page", defaultValue = "1") int page,
+			@RequestParam(name = "q", defaultValue = "") String keyword,			
+			@RequestParam(name = "q", defaultValue = "") String keyword,
+			PageInfo pageInfo,
+			Model model) {
 		// request param 수집/가공
 		
 		// business logic
-		List<BoardDto> list = service.listBoard(page);
+		List<BoardDto> list = service.listBoard(page, keyword, pageInfo);
 		
 		
 		// add attr
@@ -58,6 +64,19 @@ public class BoardController {
 		//forward
 	}
 	
+	// 위 list 메소드 파라미터 PageInfo에 일어나는 일을 풀어서 작성
+	/*
+	private void list2(
+			@RequestParam(name= "page", defaultValue = "1") int page,
+			HttpServletRequest request,
+			Model model) {
+		// request param
+		PageInfo pageInfo = new PageInfo();
+		pageInfo.setLastPageNumber(Integer.parseInt(request.getParameter("lastPageNumber")));
+		model.addAttribute("pageInfo", pageInfo);
+		
+		// 
+	}
 	@GetMapping("get")
 	public void get( 
 		
@@ -71,6 +90,21 @@ public class BoardController {
 		model.addAttribute("board", board);
 		// forward
 	}
+	
+	*/
+	@GetMapping("get")
+	public void get(
+			// @RequestParam 생략 가능
+			@RequestParam(name= "id") int id,
+			Model model) {
+			//req param
+			// business logic (게시물 db에서 가져오기)
+			BoardDto board = service.get(id);
+			//add attr
+			model.addAllAttribute("board", board);
+			//forword
+	}
+	
 	
 	@GetMapping("modify")
 	public void modify(int id, Model model) {

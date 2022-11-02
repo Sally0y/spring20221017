@@ -1,5 +1,8 @@
 package lecture.p03core;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class App {
 	public static void main(String[] args) {
 		String configLocation = "/lecture/p03core/context.xml";
