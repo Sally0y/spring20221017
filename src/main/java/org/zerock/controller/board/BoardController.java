@@ -48,7 +48,7 @@ public class BoardController {
 	@GetMapping("list")
 	public void list(
 			@RequestParam(name = "page", defaultValue = "1") int page,
-			@RequestParam(name = "q", defaultValue = "") String keyword,			
+			@RequestParam(name = "q", defaultValue = "") String type,			
 			@RequestParam(name = "q", defaultValue = "") String keyword,
 			PageInfo pageInfo,
 			Model model) {
@@ -121,8 +121,6 @@ public class BoardController {
 		} else {
 			rttr.addFlashAttribute("message", board.getId() + "번 게시물이 수정되지 않았습니다.");
 		}
-		
-		
 		
 		return "redirect:/board/list";
 	}

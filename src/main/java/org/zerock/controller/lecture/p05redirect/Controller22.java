@@ -2,8 +2,12 @@ package org.zerock.controller.lecture.p05redirect;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.zerock.domain.lecture.JavaBean03;
 import org.zerock.domain.lecture.Student;
 
 @Controller
@@ -59,6 +63,47 @@ public class Controller22 {
 		System.out.println(student.getStudentNumber());
 	}
 	
+	// RedirectAttrs로 객체 넘기기
+	@RequestMapping("sub07")
+	public String method7(RedirectAttributes rttr) {
+		Student student = new Student();
+		student.setName("kim");
+		student.setClassName("sea");
+		student.setStudentNumber("99");
+		
+		rttr.addFlashAttribute("student", student);
+		
+		return "redirect:/ex22/sub08";
+	}
+	@RequestMapping("sub08")
+	public void method8(Student student) {
+		System.out.println(student);
+	}
 	
+	// sub09 요청
+	// /ex22/sub20 redirect
+	// RedirectAttrs 사용해서 객체를 다음 요청에서 사용할 수 있게 전달
+	// 객체의 타입 : org.zerock.domain.lecture.JavaBean03
 	
+	@RequestMapping("sub09")
+	public String method9(RedirectAttributes rttr) {
+		JavaBean03 j = new JavaBean03();
+		j.setAvg(99.9);
+		j.setClassName("math");
+		j.setLocation("korea");
+		j.setScore(100);
+		j.setStudentNumber("11");
+		
+		rttr.addFlashAttribute("myBean", j);
+		
+		return "redirect:/ex22/sub10";
+	}
+	
+	// sub10 요청
+	// 모델에 있는 org.zerock.domain.lecture.JavaBean03 타입의 객테 내용 출력
+	@RequestMapping("sub10")
+	public void method10(@ModelAttribute("myBean") JavaBean03 bean) {
+		System.out.println(bean);
+	}
+
 }
