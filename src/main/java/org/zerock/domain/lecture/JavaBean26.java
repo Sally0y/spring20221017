@@ -8,4 +8,5 @@ import lombok.Data;
 public class JavaBean26 {
 	private List<String> address;
 	private boolean married;
+	private List<String> color;
 }
