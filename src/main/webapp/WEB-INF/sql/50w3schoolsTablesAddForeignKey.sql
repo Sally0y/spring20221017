@@ -17,3 +17,7 @@ ALTER TABLE OrderDetails
 ADD FOREIGN KEY (OrderID) REFERENCES Orders(OrderID);
 ALTER TABLE OrderDetails
 ADD FOREIGN KEY (ProductID) REFERENCES Products(ProductID);
+
+
+
+

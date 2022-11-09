@@ -37,7 +37,7 @@
 						<input type="text" class="form-control" name="writer">
 					</div>
 					
-					<input class="btn btn-primary" type="submit" value="등록">
+					<input id= "submitButton1" class="btn btn-primary" type="submit" value="등록">
 				
 				
 				</form>
@@ -47,6 +47,36 @@
 	
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+document.quarySelector("#submitButton1").addEventListner("click", function(e)) {
+	// submit 진행 중지
+	e.prevenDefault();
+	
+	// 제목 input 입력한 값 가져와서
+	// 빈 칸만 있는지 확인
+	let titleValue = document.querySelector(`#registerForm1 input[name="title"]`).value
+	// 본문 textarea 입력한 값 가져와서
+	// 빈 칸만 있는지 확인
+	let contentValue = document.querySelector(`#registerForm1 input[name="content"]`).value
+	// 작성자 input 값 가져와서
+	// 빈 칸만 있는지 확인
+	let writerValue = document.querySelector(`#registerForm1 input[name="writer"]`).value
+
+	// 위 테스트 다 통과하면 submit
+	if (titleValue.trim() != ""
+			&& contentValue.trim() != ""
+			&& writerValue.trim() != "") {
+		
+		document.querySelector("#registerForm1").submit();
+		
+	} else {
+		// 적절한 메세지 표시
+	}
+});
+
+</script>
+
+
 </body>
 </html>
 

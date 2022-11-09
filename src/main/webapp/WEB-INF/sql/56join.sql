@@ -1,8 +1,8 @@
-SELECT *
+SELECT * 
 FROM Orders
 WHERE OrderDate = '1996-07-04';
 
-SELECT * 
+SELECT *
 FROM OrderDetails
 WHERE OrderID = 10248;
 
@@ -40,3 +40,13 @@ FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID
 GROUP BY c.CustomerID 
 HAVING Total >= 10000
 ORDER BY c.CustomerID;
+                 
+
+
+
+
+
+
+
+
+

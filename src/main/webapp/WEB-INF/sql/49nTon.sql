@@ -33,3 +33,6 @@ VALUES (1, 1),
        (5, 2);
        
 SELECT * FROM StudentLecture;
+
+
+

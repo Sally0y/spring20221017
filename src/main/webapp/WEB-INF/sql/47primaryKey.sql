@@ -10,9 +10,11 @@ CREATE TABLE Student (
 
 INSERT INTO Student (id, name, age, gender)
 VALUES (1, 'kim', 30, 'F');
-
 INSERT INTO Student (id, name, age, gender)
 VALUES (2, 'lee', 40, 'M');
+
+INSERT INTO Student(name, age, gender)
+VALUES ('choi', 50, 'F');
 
 SELECT * FROM Student;
 
@@ -21,3 +23,4 @@ DELETE FROM Student WHERE id = 3;
 
 INSERT INTO Student (name, age, gender)
 VALUES ('park', 60, 'M');
+

@@ -1,8 +1,9 @@
+CREATE DATABASE mydb3;
 USE mydb3;
 -- '네이버 영화 상영작' 페이지 관련 테이블
 CREATE TABLE Movie (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(255) NOT NULL, -- NULL은 관리하기 쉽지 않음
+    title VARCHAR(255) NOT NULL,
     time VARCHAR(255) DEFAULT 0,
     releaseDate DATE
 );
@@ -45,3 +46,5 @@ CREATE TABLE MovieActor (
     FOREIGN KEY (movieId) REFERENCES Movie(id),
     FOREIGN KEY (actorId) REFERENCES Actor(id)
 );
+
+
