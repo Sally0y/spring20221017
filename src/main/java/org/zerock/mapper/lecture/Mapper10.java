@@ -11,7 +11,7 @@ public interface Mapper10 {
 	
 	int removeCustomerById(int id);
 
-	int removeEmployeerById(int id);
+	int removeEmployeeById(int id);
 	
 	int addCustomer();
 
@@ -23,5 +23,18 @@ public interface Mapper10 {
 
 	int insertCustomerAndGetKey(JavaBean18 customer);
 
-	int insertSupplierAndGetKey(JavaBean19 supplier);
+	int insertSupplierAndKey(JavaBean19 supplier);
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,10 +15,19 @@ public interface Mapper09 {
 	List<String> getCustomerNameByCityAndCountry(String country, String city);
 
 	String getSupplierNameByCityAndCountry(String nation, String location);
-
+	
 	String getContactName(JavaBean04 bean1);
 
 	String getSupplierContactName(JavaBean04 b);
-
+	
 	List<String> getProductName(JavaBean16 arg1, JavaBean17 arg2);
+	
 }
+
+
+
+
+
+
+
+

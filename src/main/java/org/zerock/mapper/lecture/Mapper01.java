@@ -20,6 +20,17 @@ public interface Mapper01 {
 	
 	public int getQuantity();
 	
-	public LocalDate getBirthDate();
+//	public Date getBirthDate();
 	
+	public LocalDate getBirthDate(); 
 }
+
+
+
+
+
+
+
+
+
+

@@ -14,60 +14,71 @@
 	DELETE FROM Employees
 	WHERE EmployeeId = 1
 	</delete>
-	
+
 	<delete id="removeCustomerById">
 	DELETE FROM Customers
-	WHERE CustomerId = #{id}
+	WHERE CustomerID = #{id}
 	</delete>
 	
-	<delete id="removeEmployeerById">
+	<delete id="removeEmployeeById">
 	DELETE FROM Employees
-	WHERE EmployeeId = #{id}
+	WHERE EmployeeID = #{id}
 	</delete>
-	
 	
 	<insert id="addCustomer">
 	INSERT INTO Customers
 	(CustomerName, ContactName, Address, City, PostalCode, Country)
 	VALUES
-	('SR', 'SH', "UK", 'app', '11111', '11111')
-	
+	('SON', 'HM', 'london', 'london', '111111', 'UK')
 	</insert>
 	
 	<insert id="addSupplier">
-	INSERT INTO Customers
+	INSERT INTO Suppliers
 	(SupplierName, ContactName, Address, City, PostalCode, Country, Phone)
-	VALUES
-	('ESR', 'ESH', 'USA', 'app', '11111', '11111', 'ASGDE', '010-1234-5678')
-	
+	VALUES 
+	('Park', 'JISUNG', 'SEOUL', 'SEOUL', '3333333', 'KOREA', '01099999999')
 	</insert>
 	
 	<insert id="insertCustomer">
 	INSERT INTO Customers
 	(CustomerName, ContactName, Address, City, PostalCode, Country)
 	VALUES
-	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country})
+	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country})	
 	</insert>
 	
 	<insert id="insertSupplier">
 	INSERT INTO Suppliers
 	(SupplierName, ContactName, Address, City, PostalCode, Country, Phone)
-	VALUE
+	VALUES
 	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country}, #{phone})
 	</insert>
 	
-	<insert id="insertCustomerAndGetKey"  useGeneratedKeys="true" keyProperty="id">
+	<insert id="insertCustomerAndGetKey" useGeneratedKeys="true" keyProperty="id">
 	INSERT INTO Customers
 	(CustomerName, ContactName, Address, City, PostalCode, Country)
 	VALUES
 	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country})
 	</insert>
 	
-	<insert id="insertSupplierAndGetKey"  useGeneratedKeys="true" keyProperty="id">
+	<insert id="insertSupplierAndKey" useGeneratedKeys="true" keyProperty="id">
 	INSERT INTO Suppliers
 	(SupplierName, ContactName, Address, City, PostalCode, Country, Phone)
-	VALUE
+	VALUES
 	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country}, #{phone})
 	</insert>
-	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,5 +11,4 @@ public class Controller41 {
 	public void method0() {
 		
 	}
-	
 }

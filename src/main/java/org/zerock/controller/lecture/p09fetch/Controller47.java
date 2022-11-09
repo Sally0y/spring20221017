@@ -180,9 +180,9 @@ public class Controller47 {
 		int cnt = mapper.deleteSupplier(id);
 		
 		if (cnt == 1) {
-			map.put("message", id + "번 고객이 삭제되었습니다.");
+			map.put("message", id + "번 공급자정보가 삭제되었습니다.");
 		} else {
-			map.put("message", id + "번 고객이 삭제되지 않았습니다.");
+			map.put("message", id + "번 공급자정보가 삭제되지 않았습니다.");
 		}
 		
 		return map;

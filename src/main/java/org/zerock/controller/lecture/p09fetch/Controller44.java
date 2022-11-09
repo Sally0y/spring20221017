@@ -50,6 +50,8 @@ public class Controller44 {
 	public void method05(@RequestBody JavaBean22 data) {
 		System.out.println(data);
 	}
+	
+	@PostMapping("sub06")
 	public void method06(@RequestBody JavaBean23 data) {
 		System.out.println(data);
 	}
@@ -69,10 +71,21 @@ public class Controller44 {
 		System.out.println(id);
 	}
 	
-	//path variable 자동 형변환
-	//param name과 path variable 이름 같으면 value 속성 생략 가능
-	@GetMapping("sub16/{id}")
-	public void method16(@PathVariable("id") String d) {
-		System.out.println(d);
+	// path variable 자동 형변환
+	// 파라미터명과 path variable 이름 같으면 value 속성 생략 가능
+	@GetMapping("sub16/{d}")
+	public void method16(@PathVariable int d) {
+		System.out.println(d); // 99
 	}
 }
+
+
+
+
+
+
+
+
+
+
+

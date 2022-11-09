@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -26,14 +25,17 @@
 	
 	<context:property-placeholder location="/WEB-INF/props/jdbc.properties" />
 	
-	<!-- mapper scan -->
+	<!-- mapper 스캔 -->
 	<mybatis-spring:scan base-package="org.zerock.mapper"/>
 	
-	<!-- service scan -->
+	<!-- service 스캔 -->
 	<context:component-scan base-package="org.zerock.service"></context:component-scan>
-	<!-- transaction -->
-	<bean id = "transactionManager" class="org.springframework.jdbc.datasource"></bean>
-		<property name = "dataSource" ref="dataSource"></property>
+	
+	<!-- transaction 처리 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>	
+	</bean>	
+	
 	<tx:annotation-driven/>
 </beans>
 

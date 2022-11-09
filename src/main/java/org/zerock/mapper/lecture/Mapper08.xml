@@ -30,14 +30,14 @@ WHERE
 	</select>
 	
 	<select id="getEmployeeFirstName" resultType="string">
-	<![CDATA[
+<![CDATA[
 SELECT
 	FirstName
 FROM 	
 	Employees
 WHERE 
 	BirthDate < '1960-01-01'
-	]]>
+]]>
 	</select>
 
 </mapper>

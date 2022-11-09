@@ -35,8 +35,9 @@ WHERE
 	AND Country = #{country}
 	</select>
 	
+	
 	<select id="getSupplierNameByCityAndCountry" resultType="string">
-SELECT 
+SELECT
 	SupplierName
 FROM
 	Suppliers
@@ -46,23 +47,24 @@ WHERE
 	</select>
 	
 	<select id="getContactName" resultType="string">
-SELECT 
+SELECT
 	ContactName
 FROM
 	Customers
 WHERE
-	CustomerName = #{bean1.name}
-	AND Country = #{bean1.country}
+	CustomerName = #{name}
+ AND Country = #{country}
 	</select>
-	
+
 	<select id="getSupplierContactName" resultType="string">
 SELECT 
 	ContactName
-FROM
+FROM 
 	Suppliers
 WHERE
-	SupplierName = #{name}
+	    SupplierName = #{name}
 	AND Country = #{country}
+	
 	</select>
 	
 	<select id="getProductName" resultType="string">
@@ -77,6 +79,14 @@ WHERE
 ]]>
 	</select>
 </mapper>
+
+
+
+
+
+
+
+
 
 
 

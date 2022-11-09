@@ -23,11 +23,11 @@ public class Controller45 {
 
 	@RequestMapping("sub")
 	public void method() {
-		
+
 	}
-	
+
 	@GetMapping("sub01")
-	public ResponseEntity method1() {
+	public ResponseEntity method01() {
 //		return ResponseEntity.ok().build();
 //		return ResponseEntity.badRequest().build();
 //		return ResponseEntity.notFound().build();
@@ -35,7 +35,7 @@ public class Controller45 {
 	}
 	
 	@GetMapping("sub02")
-	public ResponseEntity method2() {
+	public ResponseEntity method02() {
 //		return ResponseEntity.status(202).build();
 		return ResponseEntity.accepted().build();
 	}
@@ -57,7 +57,8 @@ public class Controller45 {
 	@GetMapping("sub05")
 	public ResponseEntity<String> method05() {
 		return ResponseEntity.ok()
-		.body("Hello world!");
+				.header("Content-Type", "text/plain;charset=UTF-8")
+				.body("헬로 월드");
 	}
 	
 	@GetMapping("sub06")
@@ -72,12 +73,11 @@ public class Controller45 {
 	
 	@GetMapping("sub07")
 	public ResponseEntity<JavaBean20> method07() {
-		JavaBean20 data1 = new JavaBean20();
-		data1.setName("손흥민");
-		data1.setAddress("서울");
+		JavaBean20 data = new JavaBean20();
+		data.setAddress("서울");
+		data.setName("손흥민");
 		
-		return ResponseEntity.ok()
-				.body(data1);
+		return ResponseEntity.ok(data);
 	}
 	
 	@GetMapping("sub08")
@@ -119,19 +119,18 @@ public class Controller45 {
 		return data;
 	}
 	
-	// sub11 요청경로
-	// JavaBean27을 json으로 변경한 응답 메소드 작성
+	// sub11 요청경로 
+	// JavaBean27 을 json 으로 변경한 응답하는 메소드 작성
 	// @ResponseBody 사용
 	@GetMapping("sub11")
 	@ResponseBody
 	public JavaBean27 method11() {
-	JavaBean27 data = new JavaBean27();
-	
-	data.setName("박지성");
-	data.setDate(LocalDate.now());
-	data.setDateTime(LocalDateTime.now());
-	
-	return data;
+		JavaBean27 data = new JavaBean27();
+		data.setName("박지성");
+		data.setDate(LocalDate.now());
+		data.setDateTime(LocalDateTime.now());
+		
+		return data;
 	}
 	
 	@GetMapping("sub12")
@@ -165,7 +164,7 @@ public class Controller45 {
 		data.setInfo(sub);
 		
 		map.put("address", "부산");
-		map.put("age", "33");
+		map.put("age", 33);
 		map.put("married", true);
 		map.put("data", data);
 		
@@ -176,14 +175,34 @@ public class Controller45 {
 	@ResponseBody
 	public Map<String, Object> method15() {
 		Map<String, Object> map = new HashMap<>();
-		JavaBean26 sub = new JavaBean26();
-		
-		map.put("color", List.of("blue", "red"));
 		map.put("car", "tesla");
 		map.put("model", "avante");
+		map.put("color", List.of("blue", "red"));
+		
 		
 		return map;
 	}
-	
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

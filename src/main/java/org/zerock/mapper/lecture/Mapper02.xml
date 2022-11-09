@@ -7,10 +7,11 @@
 	<select id="getCustomerNames" resultType="string">
 	SELECT CustomerName
 	FROM Customers
+	
 	</select>
 	
 	<select id="getCustomerIds" resultType="int">
-	SELECT CustomerID
+	SELECT CustomerId 
 	FROM Customers
 	</select>
 	
@@ -22,6 +23,12 @@
 	<select id="getEmployeeBirthDate" resultType="java.time.LocalDate">
 	SELECT BirthDate
 	FROM Employees
+	
 	</select>
-
+	
 </mapper>
+
+
+
+
+

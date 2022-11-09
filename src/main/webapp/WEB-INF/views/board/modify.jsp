@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 	<my:navBar></my:navBar>
@@ -29,6 +30,16 @@
 						<label for="" class="form-label">본문</label>
 						<textarea rows="5" name="content" class="form-control">${board.content }</textarea>
 					</div>
+					
+					<%-- 이미지 출력 --%>
+					<div>
+						<c:forEach items="${board.fileName }" var="name">
+							<div>
+								<img class="img-fluid img-thumbnail" src="/image/${board.id }/${name}" alt="">
+							</div>
+						</c:forEach>		
+					</div>
+					
 					<div class="mb-3">
 						<label for="" class="form-label">작성자</label>
 						<input type="text" name="writer" class="form-control" value="${board.writer }">

@@ -92,7 +92,8 @@
 const ctx = "${pageContext.request.contextPath}";
 
 document.querySelector("#btn15").addEventListener("click", function() {
-	fetch(ctx + "/ex47/sub15/22", {
+	const id = document.querySelector("#supplierIdInput11").value;
+	fetch(ctx + "/ex47/sub15/" + id, {
 		method : "delete"
 	})
 	.then(res => res.json())

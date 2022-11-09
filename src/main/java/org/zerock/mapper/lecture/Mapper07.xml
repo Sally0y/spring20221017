@@ -27,7 +27,7 @@ WHERE
 			<result column="price" property="price"/>
 		</collection>
 	</resultMap>
-	
+
 	<select id="getSupplier" resultMap="supplierMap">
 	SELECT 
 		s.SupplierID,
@@ -40,16 +40,22 @@ WHERE
 	</select>
 	
 	<resultMap type="org.zerock.domain.lecture.JavaBean15" id="supplierMap">
-		<id column="SupplierId" property="id"></id>
-		<result column="SupplierName" property="name"/>
+		<id column="supplierId" property="id"></id>
+		<result column="supplierName" property="name"/>
 		
 		<collection property="product" ofType="org.zerock.domain.lecture.JavaBean14">
-			<id column="productId" property="id"></id>
+			<id column="productId" property="id"/>
 			<result column="productName" property="name"/>
 			<result column="price" property="price"/>
 		</collection>
 	</resultMap>
-
+	
 </mapper>
+
+
+
+
+
+
 
 
