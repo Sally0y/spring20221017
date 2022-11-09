@@ -34,15 +34,15 @@ public class BoardController {
 			MultipartFile[] files,
 			RedirectAttributes rttr) {
 		// * 파일업로드
-		// 1. web.xml
+		// 1. web.xml 
 		//    dispatcherServlet 설정에 multipart-config 추가
-		// 2. form에 enctype="multipart/form-data" 속성 추가
-		// 3. Controller의 메소드 argument type : MultipartFile
+		// 2. form 에 enctype="multipart/form-data" 속성 추가 
+		// 3. Controller의 메소드 argument type : MultipartFile 
 		
 		// request param 수집/가공
 //		System.out.println(files.length);
 //		for (MultipartFile file : files) {
-//			System.out.println(file.get);
+//			System.out.println(file.getOriginalFilename());
 //		}
 		
 		// business logic
@@ -118,17 +118,11 @@ public class BoardController {
 	
 	@PostMapping("modify")
 	public String modify(
-			BoardDto board,
+			BoardDto board, 
 			@RequestParam("files") MultipartFile[] files,
 			RedirectAttributes rttr) {
 		
-		if (files != null) {
-			System.out.println(files.length);
-			for(MultipartFile file : files) {
-				System.out.println(file.getOriginalFilename());
-			}
-		}
-		int cnt = service.update(board);
+		int cnt = service.update(board, files);
 		
 		if (cnt == 1) {
 			rttr.addFlashAttribute("message", board.getId() + "번 게시물이 수정되었습니다.");
