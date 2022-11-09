@@ -2,6 +2,7 @@ package org.zerock.domain.board;
 
 import java.time.LocalDateTime;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import lombok.Data;
@@ -25,16 +26,24 @@ public class BoardDto {
 
 		String result = "";
 		// 작성일과 현재가
-		
+
 		if (oneDayBefore.isBefore(inserted)) {
 			// 하루 차이면 시간을 출력
 			result = inserted.toLocalTime().toString();
 		} else if (oneMonthBefore.isBefore(inserted)) {
-			// 한 달 이내면 n일 전
+			// 1달 내이면 n일 전
 			result = Period.between(inserted.toLocalDate(), now.toLocalDate())
 					.getDays() + "일 전";
 		} else if (oneYearBefore.isBefore(inserted)) {
-			
+			// 1년 이내면 n달 전
+			result = Period.between(inserted.toLocalDate(), now.toLocalDate())
+					.get(ChronoUnit.MONTHS) + "달 전";
+		} else {
+			// n년 전
+			result = Period.between(inserted.toLocalDate(), now.toLocalDate())
+					.getYears() + "년 전";
 		}
+
+		return result;
 	}
 }
