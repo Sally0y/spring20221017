@@ -11,6 +11,7 @@
 
 <c:url value="/board/list" var="listLink" />
 <c:url value="/board/register" var="registerLink" />
+<c:url value="/member/register" var="registerLink" />
 
 <nav class="navbar navbar-expand-md bg-light">
   <div class="container-md">
@@ -23,8 +24,17 @@
         <li class="nav-item">
           <a class="nav-link ${active eq 'list' ? 'active' : '' }" href="${listLink }">목록</a>
         </li>
+       
         <li class="nav-item">
           <a class="nav-link ${active eq 'register' ? 'active' : '' }" href="${registerLink }">작성</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link ${active eq 'memberList' ? 'active' : '' }" href="${memberListLink }">회원목록</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link ${active eq 'signup' ? 'active' : '' }" href="${signupLink }">회원가입</a>
         </li>
         
       </ul>

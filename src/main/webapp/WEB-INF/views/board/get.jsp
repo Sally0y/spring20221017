@@ -47,7 +47,7 @@
 				<div>
 					<c:forEach items="${board.fileName }" var="name">
 						<div>
-							<img class="img-fluid img-thumbnail" src="/image/${board.id }/${name}" alt="">
+							<img class="img-fluid img-thumbnail" src="/${imgURL }/${board.id }/${URLEncoder.encode(name, 'utf-8') }" alt="">
 						</div>
 					</c:forEach>		
 				</div>

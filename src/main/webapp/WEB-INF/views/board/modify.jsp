@@ -52,7 +52,7 @@
 								</div>
 								<div class="col-10">
 									<div>
-										<img class="img-fluid img-thumbnail" src="/image/${board.id }/${name}" alt="">
+										<img class="img-fluid img-thumbnail" src="/${imgURL }/${board.id }/${URLEncoder.encode(name, 'utf-8') }" alt="">
 									</div>
 								</div>
 							</div>
