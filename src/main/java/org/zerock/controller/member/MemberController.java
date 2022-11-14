@@ -1,5 +1,6 @@
 package org.zerock.controller.member;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -21,12 +23,43 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 	
+	@PostMapping("existEmail")
+	@ResponseBody
+	public Map<String, Object> existEmail(@RequestBody Map<String, String> req) {
+		
+		Map<String, Object> map = new HashMap<>();
+		
+		MemberDto member = service.getByEmail(req.get("email"));
+		
+		if (member == null) {
+			map.put("status", "no exist");
+			map.put("message", "사용가능한 이메일입니다.");
+		} else {
+			map.put("status", "exist");
+			map.put("message", "이미 존재하는 이메일입니다.");
+
+		}
+		
+		return map;
+	}
+	
 	@GetMapping("existId/{id}")
 	@ResponseBody
 	public Map<String, Object> existId(@PathVariable String id) {
-		System.out.println(id);
+		Map<String, Object> map = new HashMap<>();
 		
-		return null;
+		MemberDto member = service.getById(id);
+		
+		if (member == null) {
+			map.put("status", "no exist");
+			map.put("message", "사용가능한 아이디입니다.");
+		} else {
+			map.put("status", "exist");
+			map.put("message", "이미 존재하는 아이디입니다.");
+
+		}
+		
+		return map;
 	}
 
 	@GetMapping("signup")
